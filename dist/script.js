@@ -49,7 +49,7 @@ new Vue({
                 "profile_image": "https://images.unsplash.com/photo-1417325384643-aac51acc9e5d?q=75&fm=jpg&w=200&fit=max",
                 "cpf": 12354367890,
                 "role": "Admin",
-                "active": "inativo"
+                "active": "ativo"
             },
             {
                 "name": "Kristopher",
@@ -82,11 +82,11 @@ new Vue({
         inputError: false,
         editIndex: 0,
         editInput: {
-            lname: "",
-            fname: "",
-            age: 0,
-            job: "",
-            address: ""
+            name: "",
+            email: "",
+            department: 0,
+            occupation: "",
+
         },
         editError: false
     },

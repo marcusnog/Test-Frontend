@@ -20,8 +20,8 @@
                         <tr>
                             <th>Nome</th>
                             <th>Cargo </th>
-                            <th>Status</th>
                             <th>Função</th>
+                            <th>Status</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -29,19 +29,29 @@
                         <tr v-for="(person,index) in persons">
                             <td>
                                 {{person.name}}
+                                <br>
+                                <p class="text-muted">{{person.email}}</p>
+                                </br>
                             </td>
                             <td>
                                 {{person.occupation}}
+                                <br>
+                                <p class="text-muted">{{person.department}}</p>
+                                </br>
                             </td>
                             <td>
-                                {{person.role}}
+                                <p style="color: #6B7280;">
+                                    {{person.role}}
+                                </p>
                             </td>
                             <td>
-                                {{person.active}}
+                                <div class="badge text-wrap" style="width: 8rem; background-color: #D1FAE5; color: #065F46;">
+                                    {{person.active}}
+                                </div>
                             </td>
                             <td>
                                 <div style="width:150px;">
-                                    <a href="#" @click="edit(index)" class="btn btn-outline-primary">Edit</a>
+                                    <a href="#" @click="edit(index)" class="btn" style="background-color: #ffff; color: #4F46E5;">Edit</a>
                                     <a href="#" @click="deletePerson(index)" class="btn btn-danger">Delete</a>
                                 </div>
                             </td>
@@ -73,31 +83,31 @@
                         <form>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="last_name">Last Name</label>
-                                    <input class="form-control" placeholder="Last Name" id="last_name" type="text" v-model="editInput.lname">
+                                    <label for="name">Nome</label>
+                                    <input class="form-control" placeholder="Name" id="name" type="text" v-model="editInput.name">
 
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="first_name">First Name</label>
-                                    <input class="form-control" placeholder="First Name" id="first_name" type="text" v-model="editInput.fname">
+                                    <label for="email">Email</label>
+                                    <input class="form-control" placeholder="E-mail" id="email" type="text" v-model="editInput.email">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="edit_age">Age</label>
-                                    <input class="form-control" placeholder="Age" id="edit_age" type="number" v-model="editInput.age">
+                                    <label for="edit_occupation">Cargo</label>
+                                    <input class="form-control" placeholder="Cargo" id="edit_occupation" type="text" v-model="editInput.occupation">
 
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="edit_job">Job</label>
-                                    <input class="form-control" placeholder="Job" id="edit_job" type="text" v-model="editInput.job">
+                                    <label for="edit_department">Departamento</label>
+                                    <input class="form-control" placeholder="Departamento" id="edit_department" type="text" v-model="editInput.department">
 
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="edit_address">Address</label>
-                                    <input class="form-control" placeholder="Address" id="edit_address" type="text" v-model="editInput.address">
+                                    <label for="edit_role">Função</label>
+                                    <input class="form-control" placeholder="Função" id="edit_role" type="text" v-model="editInput.role">
                                 </div>
                             </div>
                         </form>

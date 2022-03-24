@@ -11,18 +11,23 @@
 </head>
 
 <body>
-    <div class="container border rounded" style="background-color: #E5E7EB; border-radius: 50px;">
-        <h4 style="color: #6B7280;">Cadastrar novo usuário</h4>
+    <div class="container border rounded" style="align-items:center; background-color: #E5E7EB; border-radius: 50px; padding: 0px;">
+        <h4 style="color: #6B7280; margin-top: 15px; margin-left: 20px;">Cadastrar novo usuário</h4>
         <div class="container border rounded">
 
-
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Foto de perfil</label>
+                <input class="form-control" ref="profile_image" type="file" id="formFile" v-model="input.profile_image">
+            </div>
             <div class="input-group">
                 <label for="name"> Nome
-            <input class="form-control" placeholder="Nome" ref="lname" v-model="input.name" id="name" type="text" style="margin: 10px; width:500px">
+            <input class="form-control" placeholder="Nome" ref="name" v-model="input.name" id="name" type="text" style="margin: 10px; width:300px">
             </label>
                 <label for="email"> Email
-            <input class="form-control" placeholder="E-mail" v-model="input.email" id="email" type="text" style="margin: 10px; width:500px;">
+            <input class="form-control" placeholder="E-mail" v-model="input.email" id="email" type="text" style="margin: 10px; width:300px;">
             </label>
+            </div>
+            <div class="input-group">
                 <label for="department"> Departamento
             <select class="form-control" placeholder="Departamento" v-model="input.department" id="department" style="margin: 10px; width: 300px;">
                 <option selected>Departamento</option>
@@ -54,7 +59,7 @@
 
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="#!" @click="add" class="btn me-md-2" style="background-color: #4F46E5; color: white; margin-top: 20px;">Add</a>
+            <a href="#!" @click="add" class="btn me-md-2" style="background-color: #4F46E5; color: white; margin-top: 20px; margin-bottom: 20px; margin-right: 20px;">Add</a>
         </div>
     </div>
 
@@ -68,9 +73,9 @@
 </html>
 <style>
     .container {
-        padding: 30px;
+        padding: 10px;
         margin-top: 30px;
         background-color: white;
-        width: 100%;
+        width: 900px;
     }
 </style>
