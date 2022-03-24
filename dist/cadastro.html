@@ -16,8 +16,9 @@
         <div class="container border rounded">
 
             <div class="mb-3">
-                <label for="formFile" class="form-label">Foto de perfil</label>
-                <input class="form-control" ref="profile_image" type="file" id="formFile" v-model="input.profile_image">
+                <label for="formFile" class="form-label">Foto de perfil
+                <input class="btn btn-primary" ref="profile_image" type="file" id="formFile">
+            </label>
             </div>
             <div class="input-group">
                 <label for="name"> Nome
@@ -56,18 +57,18 @@
         </label>
 
 
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="submit" @click="add" class="btn me-md-2" style="background-color: #4F46E5; color: white; margin-top: 20px; margin-bottom: 20px; margin-right: 20px;">Add</button>
+            </div>
+        </div>
 
-        </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="#!" @click="add" class="btn me-md-2" style="background-color: #4F46E5; color: white; margin-top: 20px; margin-bottom: 20px; margin-right: 20px;">Add</a>
-        </div>
     </div>
 
     </div>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js'></script>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

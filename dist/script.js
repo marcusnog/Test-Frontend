@@ -84,7 +84,7 @@ new Vue({
         editInput: {
             name: "",
             email: "",
-            department: 0,
+            department: "",
             occupation: "",
 
         },
@@ -95,7 +95,7 @@ new Vue({
         add: function() {
             if (this.input.name == "" ||
                 this.input.email == "" ||
-                this.input.departament == "" ||
+                this.input.department == "" ||
                 this.input.occupation == "") {
                 this.inputError = true;
                 return true;
@@ -115,33 +115,31 @@ new Vue({
             this.$refs.lname.focus();
         },
         edit: function(index) {
-            this.editInput.lname = this.persons[index].lname;
-            this.editInput.fname = this.persons[index].fname;
-            this.editInput.age = this.persons[index].age;
-            this.editInput.job = this.persons[index].job;
-            this.editInput.address = this.persons[index].address;
+            this.editInput.name = this.persons[index].name;
+            this.editInput.email = this.persons[index].email;
+            this.editInput.department = this.persons[index].department;
+            this.editInput.occupation = this.persons[index].occupation;
 
             this.editIndex = index;
             this.editError = false;
             $(".modal").modal();
         },
         update: function() {
-            if (this.editInput.lname == "" ||
-                this.editInput.fname == "" ||
-                this.editInput.age <= 0 ||
-                this.editInput.job == "" ||
-                this.editInput.address == "") {
+            if (this.editInput.name == "" ||
+                this.editInput.email == "" ||
+                this.editInput.department == "" ||
+                this.editInput.occupation == ""
+            ) {
                 this.editError = true;
                 return true;
             }
             this.editError = false;
             this.persons.splice(this.editIndex, 1);
             this.persons.push({
-                lname: this.editInput.lname,
-                fname: this.editInput.fname,
-                age: this.editInput.age,
-                job: this.editInput.job,
-                address: this.editInput.address
+                name: this.editInput.name,
+                email: this.editInput.email,
+                department: this.editInput.department,
+                occupation: this.editInput.occupation,
             });
             for (var key in this.editInput) {
                 this.editInput[key] = "";
